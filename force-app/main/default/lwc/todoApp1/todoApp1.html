@@ -1,0 +1,25 @@
+<template>
+    <main class="background">
+       <h1>TODO APP</h1>
+        <div>
+            <div class="inputboxDiv">
+                <input type="text" id="inp" class="textBox" onchange={inputboxvalue}></input>
+                <button onclick={clickHandler}>Add</button>
+             </div>
+        
+             <div class="tasksList">
+                <template for:each={list} for:item="lists">
+                    <li key={lists.id}>
+            
+                        <div class="tasks">
+                            
+                            <input type="checkbox" class="inputCheckBox" ></input>
+                            <p>{lists.name}</p>
+                            <lightning-button-icon class="delBtn" variant="brand" onclick={deleteHandler} name={lists.id} icon-name="utility:delete" icon-class="slds-m-around_medium"   alternative-text="Zoom in" title="delete"></lightning-button-icon>
+                         </div>
+                    </li>
+                </template>
+             </div>
+        </div>
+    </main>
+</template>
